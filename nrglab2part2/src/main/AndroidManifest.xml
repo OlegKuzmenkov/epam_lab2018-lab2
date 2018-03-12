@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.oleg_kuzmenkov.android.nrglab2part2">
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <permission android:description="@string/permission"
+        android:name="com.oleg_kuzmenkov.android.mypermission"
+        android:label="my_permission"
+        android:protectionLevel="dangerous">
+    </permission>
+
+     <uses-permission android:name="com.oleg_kuzmenkov.android.mypermission"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- android:permission="com.testpackage.mypermission" -->
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true"
+            android:permission="com.oleg_kuzmenkov.android.mypermission">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+
+             <intent-filter>
+                 <action android:name="com.oleg_kuzmenkov.android.DANGEROUS_ACTIVITY" />
+                 <category android:name="android.intent.category.DEFAULT" />
+             </intent-filter>
+         </activity>
+
+     </application>
+
+ </manifest>
